@@ -193,4 +193,4 @@ optional providers or plugins.
 
 ## License
 
-No license has been selected yet.
+Mush is available under the [MIT License](LICENSE).
