@@ -13,17 +13,15 @@ each color means.
 
 ### Mush dark
 
-> Screenshot placeholder: `mush-dark` displaying
-> [`examples/rust.rs`](examples/rust.rs) with Tree-sitter and rust-analyzer.
+![Mush dark project view](docs/screenshots/mush-dark1.png)
+
+![Mush dark Rust highlighting](docs/screenshots/mush-dark2.png)
 
 ### Mush light
 
-> Screenshot placeholder: `mush-light` displaying
-> [`examples/rust.rs`](examples/rust.rs) with Tree-sitter and rust-analyzer.
+![Mush light project view](docs/screenshots/mush-light1.png)
 
-Real screenshots are planned for a later documentation update. To capture
-comparable images, use the same terminal, font, window dimensions, Rust fixture,
-and cursor position for both variants.
+![Mush light Rust highlighting](docs/screenshots/mush-light2.png)
 
 ## Requirements
 

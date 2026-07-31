@@ -1,3 +1,4 @@
 .nvimlog
+.DS_Store
 /examples/Cargo.lock
 /examples/target/
