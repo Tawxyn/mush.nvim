@@ -55,6 +55,7 @@ function M.load(variant)
   require("mush.groups.treesitter").apply(palette)
   require("mush.groups.lsp").apply(palette)
   require("mush.groups.rust").apply(palette)
+  require("mush.groups.plugins").apply(palette)
 
   if config.terminal_colors then
     set_terminal_colors(palette)
