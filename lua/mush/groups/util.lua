@@ -5,7 +5,7 @@ local function resolve(palette, spec)
 
   for _, field in ipairs({ "fg", "bg", "sp" }) do
     local role = result[field]
-    if type(role) == "string" then
+    if type(role) == "string" and role ~= "NONE" then
       result[field] = palette[role].gui
       if field == "fg" then
         result.ctermfg = palette[role].cterm

@@ -1,7 +1,7 @@
 local M = {}
 
 function M.apply(palette, config)
-  local background = config.transparent and nil or "bg"
+  local background = config.transparent and "NONE" or "bg"
   local groups = {
     Normal = { fg = "fg", bg = background },
     NormalNC = { fg = "fg", bg = background },
