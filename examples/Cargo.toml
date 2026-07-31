@@ -1,0 +1,9 @@
+[package]
+name = "mush-rust-fixture"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "mush-rust-fixture"
+path = "rust.rs"
