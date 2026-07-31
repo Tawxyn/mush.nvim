@@ -86,7 +86,7 @@ test("variant switching is repeatable", function()
     assert_equal(vim.g.colors_name, "mush-light")
     assert_equal(get_hl("Normal", true).fg, tonumber("101310", 16))
     assert_equal(get_hl("Normal", true).bg, tonumber("f8faf7", 16))
-    assert_equal(get_hl("GitSignsAdd", true).fg, tonumber("146c38", 16))
+    assert_equal(get_hl("GitSignsAdd", true).fg, tonumber("00733f", 16))
   end
 end)
 

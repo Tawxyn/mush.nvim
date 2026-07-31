@@ -4,7 +4,8 @@ A high-contrast Neovim colorscheme with coordinated dark and light variants,
 careful Rust highlighting, and no runtime dependencies.
 
 Mush uses near-black and near-white foundations with bright moss, rust, amber,
-cyan, blue, violet, pink, and red accents. The variants preserve the same
+cyan, blue, violet, pink, and red accents. The light variant uses deep,
+jewel-toned accents rather than pastels. Both variants preserve the same
 semantic color language, so switching themes does not require relearning what
 each color means.
 
