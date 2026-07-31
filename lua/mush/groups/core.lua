@@ -1,37 +1,72 @@
 local M = {}
 
-local function highlight(palette, spec)
-  local result = vim.deepcopy(spec)
-
-  for _, field in ipairs({ "fg", "bg", "sp" }) do
-    local role = result[field]
-    if type(role) == "string" then
-      result[field] = palette[role].gui
-      if field == "fg" then
-        result.ctermfg = palette[role].cterm
-      elseif field == "bg" then
-        result.ctermbg = palette[role].cterm
-      end
-    end
-  end
-
-  return result
-end
-
 function M.apply(palette, config)
   local background = config.transparent and nil or "bg"
   local groups = {
     Normal = { fg = "fg", bg = background },
     NormalNC = { fg = "fg", bg = background },
+    ColorColumn = { bg = "bg_elevated" },
+    Conceal = { fg = "subtle" },
+    Cursor = { fg = "bg", bg = "fg" },
+    CursorIM = { link = "Cursor" },
+    CursorColumn = { bg = "bg_elevated" },
+    CursorLine = { bg = "bg_elevated" },
+    CursorLineNr = { fg = "yellow", bg = "bg_elevated", bold = true },
+    Directory = { fg = "blue", bold = true },
+    ErrorMsg = { fg = "bright_red", bold = true },
+    WinSeparator = { fg = "subtle", bg = background },
+    Folded = { fg = "muted", bg = "bg_elevated", italic = true },
+    FoldColumn = { fg = "subtle", bg = background },
+    IncSearch = { fg = "bg", bg = "orange", bold = true },
+    CurSearch = { fg = "bg", bg = "yellow", bold = true },
+    Substitute = { fg = "bg", bg = "red", bold = true },
+    LineNr = { fg = "subtle", bg = background },
+    LineNrAbove = { link = "LineNr" },
+    LineNrBelow = { link = "LineNr" },
+    MatchParen = { fg = "bright_yellow", bg = "bg_highlight", bold = true },
+    ModeMsg = { fg = "green", bold = true },
+    MsgArea = { fg = "fg", bg = background },
+    MsgSeparator = { fg = "subtle", bg = "bg_elevated" },
+    MoreMsg = { fg = "cyan" },
+    NonText = { fg = "subtle" },
     NormalFloat = { fg = "fg", bg = "bg_elevated" },
     FloatBorder = { fg = "subtle", bg = "bg_elevated" },
+    FloatTitle = { fg = "cyan", bg = "bg_elevated", bold = true },
+    Pmenu = { fg = "fg", bg = "bg_elevated" },
+    PmenuSel = { fg = "bright_fg", bg = "bg_visual", bold = true },
+    PmenuKind = { fg = "purple", bg = "bg_elevated" },
+    PmenuKindSel = { fg = "bright_purple", bg = "bg_visual", bold = true },
+    PmenuExtra = { fg = "muted", bg = "bg_elevated" },
+    PmenuExtraSel = { fg = "fg", bg = "bg_visual" },
+    PmenuSbar = { bg = "bg_highlight" },
+    PmenuThumb = { bg = "subtle" },
+    Question = { fg = "green", bold = true },
+    QuickFixLine = { fg = "bright_fg", bg = "bg_visual", bold = true },
+    Search = { fg = "fg", bg = "bg_visual", bold = true },
+    SpecialKey = { fg = "subtle" },
+    SpellBad = { sp = "red", undercurl = true },
+    SpellCap = { sp = "yellow", undercurl = true },
+    SpellLocal = { sp = "cyan", undercurl = true },
+    SpellRare = { sp = "purple", undercurl = true },
+    StatusLine = { fg = "fg", bg = "bg_highlight", bold = true },
+    StatusLineNC = { fg = "muted", bg = "bg_elevated" },
+    TabLine = { fg = "muted", bg = "bg_elevated" },
+    TabLineFill = { bg = "bg_elevated" },
+    TabLineSel = { fg = "bright_fg", bg = "bg_highlight", bold = true },
+    Title = { fg = "purple", bold = true },
+    VertSplit = { link = "WinSeparator" },
+    Visual = { bg = "bg_visual" },
+    VisualNOS = { bg = "bg_visual", underline = true },
+    WarningMsg = { fg = "yellow", bold = true },
+    Whitespace = { fg = "subtle" },
+    WildMenu = { fg = "bg", bg = "cyan", bold = true },
+    WinBar = { fg = "fg", bg = background, bold = true },
+    WinBarNC = { fg = "muted", bg = background },
     EndOfBuffer = { fg = config.transparent and "bg" or "subtle", bg = background },
     SignColumn = { fg = "muted", bg = background },
   }
 
-  for name, spec in pairs(groups) do
-    vim.api.nvim_set_hl(0, name, highlight(palette, spec))
-  end
+  require("mush.groups.util").apply(palette, groups)
 end
 
 return M

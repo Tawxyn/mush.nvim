@@ -51,6 +51,9 @@ function M.load(variant)
 
   vim.cmd.highlight("clear")
   require("mush.groups.core").apply(palette, config)
+  require("mush.groups.syntax").apply(palette, config)
+  require("mush.groups.treesitter").apply(palette)
+  require("mush.groups.lsp").apply(palette)
 
   if config.terminal_colors then
     set_terminal_colors(palette)
