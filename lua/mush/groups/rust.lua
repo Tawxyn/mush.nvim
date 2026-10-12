@@ -15,7 +15,10 @@ function M.apply(palette)
     ["@constant.rust"] = { fg = "pink" },
     ["@constant.builtin.rust"] = { fg = "bright_purple", bold = true },
     ["@variable.builtin.rust"] = { fg = "purple", italic = true },
-    ["@variable.member.rust"] = { fg = "fg" },
+    ["@variable.rust"] = { fg = "green" },
+    ["@variable.parameter.rust"] = { fg = "yellow", italic = true },
+    ["@variable.member.rust"] = { fg = "yellow" },
+    ["@property.rust"] = { fg = "yellow" },
 
     -- rust-analyzer semantic token types.
     ["@lsp.type.struct.rust"] = { fg = "cyan", bold = true },
@@ -34,9 +37,9 @@ function M.apply(palette)
     ["@lsp.type.label.rust"] = { fg = "orange", italic = true },
     ["@lsp.type.selfKeyword.rust"] = { fg = "purple", italic = true },
     ["@lsp.type.formatSpecifier.rust"] = { fg = "cyan", bold = true },
-    ["@lsp.type.parameter.rust"] = { fg = "fg", italic = true },
-    ["@lsp.type.property.rust"] = { fg = "fg" },
-    ["@lsp.type.variable.rust"] = { fg = "fg" },
+    ["@lsp.type.parameter.rust"] = { fg = "yellow", italic = true },
+    ["@lsp.type.property.rust"] = { fg = "yellow" },
+    ["@lsp.type.variable.rust"] = { fg = "green" },
 
     -- Modifiers add styling without replacing the token's semantic color.
     ["@lsp.mod.mutable.rust"] = { underline = true },

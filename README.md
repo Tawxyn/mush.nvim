@@ -132,6 +132,7 @@ The Rust palette is designed to keep these categories visually distinct:
 - types and structs use cyan; traits use violet; type parameters use bright
   cyan with an underline
 - functions use blue, methods use brighter blue, and macros use bold rust
+- variables use green; parameters use italic amber; fields use amber
 - enum variants and read-only semantic values use pink
 - mutable semantic tokens are underlined while immutable values remain plain
 - lifetimes use italic pink and loop labels use italic rust
