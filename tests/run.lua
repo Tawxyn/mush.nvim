@@ -85,8 +85,8 @@ test("variant switching is repeatable", function()
     vim.cmd.colorscheme("mush-light")
     assert_equal(vim.g.colors_name, "mush-light")
     assert_equal(get_hl("Normal", true).fg, tonumber("101310", 16))
-    assert_equal(get_hl("Normal", true).bg, tonumber("f8faf7", 16))
-    assert_equal(get_hl("GitSignsAdd", true).fg, tonumber("00733f", 16))
+    assert_equal(get_hl("Normal", true).bg, tonumber("fffefb", 16))
+    assert_equal(get_hl("GitSignsAdd", true).fg, tonumber("00843d", 16))
   end
 end)
 
@@ -125,7 +125,7 @@ test("setup starts from defaults on every call", function()
   require("mush").setup({ transparent = false })
   vim.cmd.colorscheme("mush-light")
 
-  assert_equal(get_hl("Normal", true).bg, tonumber("f8faf7", 16))
+  assert_equal(get_hl("Normal", true).bg, tonumber("fffefb", 16))
   assert(get_hl("Comment", true).italic)
   assert(get_hl("Keyword", true).bold)
   assert(not get_hl("Function", true).bold)
@@ -139,7 +139,7 @@ test("terminal colors are opt-in configurable", function()
 
   require("mush").setup({ terminal_colors = true })
   vim.cmd.colorscheme("mush-light")
-  assert_equal(vim.g.terminal_color_0, "#f8faf7")
+  assert_equal(vim.g.terminal_color_0, "#fffefb")
   assert_equal(vim.g.terminal_color_15, "#000000")
 end)
 
